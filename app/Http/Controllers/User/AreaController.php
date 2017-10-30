@@ -10,8 +10,9 @@ class AreaController extends Controller
 {
     public function store(Area $area)
         {
-            session()->put('area', $area->slug);
-            // redirect to category index
-            return redirect()->back();
+        session()->put('area', $area->slug);
+        
+        // Redirect to category index
+        return redirect()->route('category .index', [$area]);
         }    
 }
